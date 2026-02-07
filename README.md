@@ -1,5 +1,3 @@
----
-
 # Human-Centered Mental Health Support AI
 
 **Emotion-aware • Safety-first • Explainable**
