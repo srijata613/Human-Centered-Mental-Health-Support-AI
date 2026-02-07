@@ -1,8 +1,7 @@
 import torch
 from transformers import (
     DistilBertTokenizerFast,
-    DistilBertForSequenceClassification,
-    DistilBertConfig
+    DistilBertForSequenceClassification
 )
 
 from safety import safety_check
@@ -11,15 +10,17 @@ from explainability import get_explainability_hints
 # ----------------- DEVICE -----------------
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
+# ----------------- MODEL NAME -----------------
+MODEL_NAME = "distilbert-base-uncased"
+
 # ----------------- TOKENIZER -----------------
-tokenizer = DistilBertTokenizerFast.from_pretrained("model")
+tokenizer = DistilBertTokenizerFast.from_pretrained(MODEL_NAME)
 
-# ----------------- MODEL (MANUAL LOAD) -----------------
-config = DistilBertConfig.from_pretrained("model")
-
-model = DistilBertForSequenceClassification(config)
-model.load_state_dict(
-    torch.load("model/pytorch_model.bin", map_location=device)
+# ----------------- MODEL -----------------
+model = DistilBertForSequenceClassification.from_pretrained(
+    MODEL_NAME,
+    num_labels=8,
+    problem_type="multi_label_classification"
 )
 
 model.to(device)
@@ -45,9 +46,7 @@ def analyze_text(text: str):
         truncation=True,
         padding=True,
         max_length=64
-    )
-
-    inputs = {k: v.to(device) for k, v in inputs.items()}
+    ).to(device)
 
     with torch.no_grad():
         outputs = model(**inputs)
