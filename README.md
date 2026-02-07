@@ -1,45 +1,64 @@
-Human-Centered Mental Health Support AI
+Perfect. Below is a **final, portfolio-grade README** you can paste directly into `README.md`.
 
-Emotion-aware • Safety-first • Explainable
+It’s:
 
-Overview
+* clear
+* honest
+* technically credible
+* safety-responsible
+* interviewer-ready
 
-This project explores a responsible approach to emotion-aware AI systems for sensitive text inputs.
+No hype. No overclaiming.
 
-Instead of optimizing only for prediction accuracy, the system is designed around human safety, ethical boundaries, and transparency. It analyzes user text to detect emotional signals, applies explicit safety rules, and generates supportive, non-clinical responses.
+---
 
-The system does not provide therapy, diagnosis, or medical advice.
+# Human-Centered Mental Health Support AI
 
-Core Capabilities
+**Emotion-aware • Safety-first • Explainable**
 
-Multi-label Emotion Detection
-Uses a fine-tuned DistilBERT model trained on the GoEmotions dataset to estimate probabilities over 8 emotional categories.
+---
 
-Safety-First Decision Layer
-A deterministic, rule-based safety module independently classifies inputs as:
+## Overview
 
-NORMAL
+This project explores a **responsible approach to emotion-aware AI systems** for sensitive text inputs.
 
-DISTRESS
+Instead of optimizing only for prediction accuracy, the system is designed around **human safety, ethical boundaries, and transparency**. It analyzes user text to detect emotional signals, applies explicit safety rules, and generates supportive, non-clinical responses.
 
-CRISIS
+The system **does not provide therapy, diagnosis, or medical advice**.
 
-Safety decisions override emotion predictions.
+---
 
-Explicit Crisis Handling
-Inputs indicating self-harm or suicidal ideation trigger safe, non-judgmental responses and encourage real-world support.
+## Core Capabilities
 
-Explainability
-The system surfaces:
+* **Multi-label Emotion Detection**
+  Uses a fine-tuned DistilBERT model trained on the GoEmotions dataset to estimate probabilities over 8 emotional categories.
 
-emotion probability distributions
+* **Safety-First Decision Layer**
+  A deterministic, rule-based safety module independently classifies inputs as:
 
-indicative lexical cues that influenced predictions
+  * `NORMAL`
+  * `DISTRESS`
+  * `CRISIS`
 
-Interactive Demo
-A Streamlit web interface allows real-time testing of system behavior.
+  Safety decisions override emotion predictions.
 
-System Architecture
+* **Explicit Crisis Handling**
+  Inputs indicating self-harm or suicidal ideation trigger safe, non-judgmental responses and encourage real-world support.
+
+* **Explainability**
+  The system surfaces:
+
+  * emotion probability distributions
+  * indicative lexical cues that influenced predictions
+
+* **Interactive Demo**
+  A Streamlit web interface allows real-time testing of system behavior.
+
+---
+
+## System Architecture
+
+```
 User Text
    ↓
 Emotion Detection Model (DistilBERT)
@@ -54,102 +73,112 @@ Safety Layer (Rule-Based)
 Response Router
    ↓
 Emotion- & Safety-Aware Response
+```
 
+This separation allows safety behavior to be tuned **without retraining the ML model**.
 
-This separation allows safety behavior to be tuned without retraining the ML model.
+---
 
-Safety & Ethics Philosophy
+## Safety & Ethics Philosophy
 
 This project follows several core principles:
 
-No diagnosis or treatment
-The system avoids clinical language and does not attempt mental health assessment.
+* **No diagnosis or treatment**
+  The system avoids clinical language and does not attempt mental health assessment.
 
-Rules over ML for high-risk decisions
-Crisis detection is handled with explicit, auditable rules rather than probabilistic models.
+* **Rules over ML for high-risk decisions**
+  Crisis detection is handled with explicit, auditable rules rather than probabilistic models.
 
-Recall over precision in crisis contexts
-It is preferable to flag ambiguous cases as distress than to miss genuine risk.
+* **Recall over precision in crisis contexts**
+  It is preferable to flag ambiguous cases as distress than to miss genuine risk.
 
-Clear boundaries
-The system redirects users to real-world help when appropriate.
+* **Clear boundaries**
+  The system redirects users to real-world help when appropriate.
 
-Response Design
+---
 
-Responses are emotion-aware and polarity-sensitive:
+## Response Design
 
-Positive emotions → affirming, reflective tone
+Responses are **emotion-aware and polarity-sensitive**:
 
-Neutral emotions → open-ended, non-assumptive tone
-
-Negative emotions → empathetic, validating tone
-
-Distress → supportive, grounding language
-
-Crisis → safety-focused messaging and external resources
+* Positive emotions → affirming, reflective tone
+* Neutral emotions → open-ended, non-assumptive tone
+* Negative emotions → empathetic, validating tone
+* Distress → supportive, grounding language
+* Crisis → safety-focused messaging and external resources
 
 This avoids one-size-fits-all responses and improves user experience.
 
-Explainability Approach
+---
 
-Explainability is intentionally local and lightweight, not diagnostic.
+## Explainability Approach
+
+Explainability is intentionally **local and lightweight**, not diagnostic.
 
 The system provides:
 
-emotion probability scores
+* emotion probability scores
+* keyword-based cues for transparency and debugging
 
-keyword-based cues for transparency and debugging
+These explanations are heuristic and meant to **increase trust**, not to justify decisions conclusively.
 
-These explanations are heuristic and meant to increase trust, not to justify decisions conclusively.
+---
 
-Known Limitations
+## Known Limitations
 
-Sarcasm and negation may be misinterpreted.
-
-Implicit distress requires continuous lexicon refinement.
-
-Short or emotionally flat inputs may map weakly to neutral or positive emotions.
-
-Explainability cues are not causal explanations.
+* Sarcasm and negation may be misinterpreted.
+* Implicit distress requires continuous lexicon refinement.
+* Short or emotionally flat inputs may map weakly to neutral or positive emotions.
+* Explainability cues are not causal explanations.
 
 These limitations are documented intentionally to avoid overclaiming system capabilities.
 
-Tech Stack
+---
 
-Python
+## Tech Stack
 
-PyTorch
+* Python
+* PyTorch
+* Hugging Face Transformers
+* DistilBERT
+* Streamlit
 
-Hugging Face Transformers
+---
 
-DistilBERT
+## How to Run Locally
 
-Streamlit
-
-How to Run Locally
+```bash
 pip install -r requirements.txt
 streamlit run app.py
+```
 
+The app will be available at `http://localhost:8501`.
 
-The app will be available at http://localhost:8501.
+---
 
-Disclaimer
+## Disclaimer
 
-This system is not a medical professional and does not provide diagnosis or treatment.
+This system is **not a medical professional** and does not provide diagnosis or treatment.
 
 If you or someone else is in immediate danger, please seek local emergency help or contact a trusted support service.
 
-Why This Project Matters
+---
+
+## Why This Project Matters
 
 Most conversational AI systems prioritize fluency.
-This project prioritizes judgment, safety, and accountability.
+This project prioritizes **judgment, safety, and accountability**.
 
 It demonstrates how ML models can be embedded into systems that respect human vulnerability rather than ignore it.
 
-Project Status
+---
 
-✅ Complete
+### Project Status
+
+✅ **Complete**
 This project is intentionally frozen to preserve clarity and design integrity.
+
+
 
 ## Model Weights
 
