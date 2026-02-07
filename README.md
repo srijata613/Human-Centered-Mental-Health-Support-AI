@@ -1,15 +1,3 @@
-Perfect. Below is a **final, portfolio-grade README** you can paste directly into `README.md`.
-
-It’s:
-
-* clear
-* honest
-* technically credible
-* safety-responsible
-* interviewer-ready
-
-No hype. No overclaiming.
-
 ---
 
 # Human-Centered Mental Health Support AI
