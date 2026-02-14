@@ -11,17 +11,15 @@ from explainability import get_explainability_hints
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # ----------------- MODEL NAME -----------------
-MODEL_NAME = "distilbert-base-uncased"
+MODEL_NAME = "srijata05/Human-Centered_Mental_Health_Support_AI"
+# Example:
+# MODEL_NAME = "srijata613/human-centered-emotion-model"
 
 # ----------------- TOKENIZER -----------------
 tokenizer = DistilBertTokenizerFast.from_pretrained(MODEL_NAME)
 
 # ----------------- MODEL -----------------
-model = DistilBertForSequenceClassification.from_pretrained(
-    MODEL_NAME,
-    num_labels=8,
-    problem_type="multi_label_classification"
-)
+model = DistilBertForSequenceClassification.from_pretrained(MODEL_NAME)
 
 model.to(device)
 model.eval()
